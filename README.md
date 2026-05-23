@@ -4,6 +4,8 @@
 
 No extra chat messages. No pop-up windows. No replacement spell workflow. The module reads the D35E system's existing spell data and displays the save DC more clearly.
 
+![D35E spellbook summary row with Spell Save DC](docs/screenshots/sheet-summary-save-dc.png)
+
 ## What It Does
 
 - Adds a clear `Spell Save DC: N` row to existing D35E spell chat cards when the spell calls for a saving throw.
@@ -12,6 +14,8 @@ No extra chat messages. No pop-up windows. No replacement spell workflow. The mo
 - Shows the live spellcasting ability modifier in the sheet summary, such as `10 + 6 (INT mod) + spell level`.
 - Supports multiple spellbooks by reading each spellbook's configured ability and `baseDCFormula`.
 - Does not modify actor, item, spell, or world data.
+
+![D35E spell chat card showing Spell Save DC](docs/screenshots/chat-card-save-dc.png)
 
 ## Compatibility
 

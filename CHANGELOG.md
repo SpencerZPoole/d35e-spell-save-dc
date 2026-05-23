@@ -3,7 +3,7 @@
 ## 0.1.1
 
 - Updated public release metadata for Foundry package listing submission.
-- Removed illustrative screenshot assets from the package surface.
+- Added tightly cropped screenshots from the live Foundry desktop app.
 
 ## 0.1.0
 

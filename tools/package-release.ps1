@@ -49,6 +49,7 @@ $include = @(
   'CHANGELOG.md',
   'LICENSE.md',
   'SECURITY.md',
+  'docs',
   'lang',
   'scripts',
   'styles'
