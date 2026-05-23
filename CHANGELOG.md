@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Updated public release metadata for Foundry package listing submission.
+- Removed illustrative screenshot assets from the package surface.
+
 ## 0.1.0
 
 - Added spell chat card enhancement for D35E-rendered spell save DCs.

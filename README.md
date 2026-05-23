@@ -4,8 +4,6 @@
 
 No extra chat messages. No pop-up windows. No replacement spell workflow. The module reads the D35E system's existing spell data and displays the save DC more clearly.
 
-![Spell chat card showing Spell Save DC](docs/screenshots/chat-card-save-dc.svg)
-
 ## What It Does
 
 - Adds a clear `Spell Save DC: N` row to existing D35E spell chat cards when the spell calls for a saving throw.
@@ -14,8 +12,6 @@ No extra chat messages. No pop-up windows. No replacement spell workflow. The mo
 - Shows the live spellcasting ability modifier in the sheet summary, such as `10 + 6 (INT mod) + spell level`.
 - Supports multiple spellbooks by reading each spellbook's configured ability and `baseDCFormula`.
 - Does not modify actor, item, spell, or world data.
-
-![Character sheet spellbook summary showing Spell Save DC](docs/screenshots/sheet-summary-save-dc.svg)
 
 ## Compatibility
 
@@ -39,7 +35,7 @@ Then open your D35E world, enable **D35E Spell Save DC** in **Manage Modules**, 
 Foundry checks the stable manifest URL above for updates. Each release manifest points its `download` field to the matching versioned zip asset, for example:
 
 ```text
-https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v0.1.0/d35e-spell-save-dc-v0.1.0.zip
+https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v0.1.1/d35e-spell-save-dc-v0.1.1.zip
 ```
 
 That means Foundry can always find the latest manifest while each installed version still downloads a fixed release archive.
