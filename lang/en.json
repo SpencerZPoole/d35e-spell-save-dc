@@ -1,0 +1,7 @@
+{
+  "D35ESpellSaveDC.Settings.Debug.Name": "Debug logging",
+  "D35ESpellSaveDC.Settings.Debug.Hint": "Log skipped spell save DC enhancements to the browser console for troubleshooting.",
+  "D35ESpellSaveDC.Chat.Label": "Spell Save DC",
+  "D35ESpellSaveDC.Sheet.Label": "Spell Save DC",
+  "D35ESpellSaveDC.Sheet.Formula": "Formula"
+}
