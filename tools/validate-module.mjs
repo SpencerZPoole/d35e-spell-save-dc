@@ -11,10 +11,20 @@ const fail = (message) => {
 
 const manifest = readJson("module.json");
 const language = readJson("lang/en.json");
+const expectedReleaseBase = `https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v${manifest.version}`;
 
 if (manifest.id !== "d35e-spell-save-dc") fail("module.json id must be d35e-spell-save-dc");
 if (manifest.title !== "D35E Spell Save DC") fail("module.json title mismatch");
 if (!manifest.relationships?.systems?.some((system) => system.id === "D35E")) fail("module.json must declare D35E relationship");
+if (!manifest.system?.includes?.("D35E")) fail("module.json must restrict activation to D35E worlds");
+if (manifest.manifest !== "https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/latest/download/module.json") {
+  fail("module.json manifest must point to the stable latest-release manifest asset");
+}
+if (manifest.download !== `${expectedReleaseBase}/d35e-spell-save-dc-v${manifest.version}.zip`) {
+  fail("module.json download must point to the versioned release zip asset");
+}
+if (!manifest.readme?.startsWith?.("https://raw.githubusercontent.com/")) fail("module.json readme should use a raw public URL");
+if (!manifest.changelog?.startsWith?.("https://raw.githubusercontent.com/")) fail("module.json changelog should use a raw public URL");
 
 for (const script of manifest.scripts ?? []) {
   if (!fs.existsSync(path.join(root, script))) fail(`Missing script listed in module.json: ${script}`);

@@ -138,20 +138,31 @@
     }
   }
 
-  function displayAbilityMod(spellbook) {
+  function displayAbilityMod(actor, spellbook) {
     const ability = String(spellbook?.ability ?? "").trim();
-    return ability ? `${ability.toUpperCase()} mod` : "ability mod";
+    if (!ability) return "ability mod";
+
+    const label = `${ability.toUpperCase()} mod`;
+    const modifier = Number(getProperty(actor, `system.abilities.${ability}.mod`));
+    return Number.isFinite(modifier) ? `${modifier} (${label})` : label;
   }
 
-  function readableFormula(spellbook) {
+  function readableFormula(actor, spellbook) {
     const raw = String(spellbook?.baseDCFormula ?? "10 + @sl + @ablMod").trim() || "10 + @sl + @ablMod";
+    const abilityMod = displayAbilityMod(actor, spellbook);
+    const normalized = raw.replace(/\s+/g, "");
+
+    if (normalized === "10+@sl+@ablMod" || normalized === "10+@ablMod+@sl") {
+      return `10 + ${abilityMod} + spell level`;
+    }
+
     return raw
       .replaceAll("@sl", "spell level")
-      .replaceAll("@ablMod", displayAbilityMod(spellbook))
+      .replaceAll("@ablMod", abilityMod)
       .replaceAll("@cl", "caster level");
   }
 
-  function insertSpellbookSummary(spellbookRoot, spellbook) {
+  function insertSpellbookSummary(spellbookRoot, actor, spellbook) {
     const attributes = spellbookRoot.querySelector("ul.attributes.misc-defenses.flexrow");
     if (!attributes || attributes.querySelector(`.${INSERTED_SHEET_CLASS}`)) return;
 
@@ -167,7 +178,7 @@
     value.className = "attribute-value";
 
     const span = document.createElement("span");
-    span.textContent = readableFormula(spellbook);
+    span.textContent = readableFormula(actor, spellbook);
     value.append(span);
 
     const footer = document.createElement("footer");
@@ -198,7 +209,7 @@
         continue;
       }
 
-      insertSpellbookSummary(spellbookRoot, spellbook);
+      insertSpellbookSummary(spellbookRoot, actor, spellbook);
     }
   }
 

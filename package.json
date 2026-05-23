@@ -2,7 +2,6 @@
   "name": "d35e-spell-save-dc",
   "version": "0.1.0",
   "description": "Prominent D35E spell save DC display for Foundry VTT chat cards and spellbook summaries.",
-  "private": true,
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -15,6 +14,7 @@
   "homepage": "https://github.com/SpencerZPoole/d35e-spell-save-dc#readme",
   "scripts": {
     "check:js": "node --check scripts/d35e-spell-save-dc.js && node --check tools/validate-module.mjs",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package-release.ps1",
     "validate": "node tools/validate-module.mjs && npm run check:js",
     "test": "npm run validate"
   }

@@ -1,43 +1,79 @@
 # D35E Spell Save DC
 
-D35E Spell Save DC is a small Foundry VTT module for the D35E system. It makes spell save DCs harder to miss during play by promoting the system's native calculated save DC into a clear row on existing spell chat cards.
+**D35E Spell Save DC** is a small Foundry Virtual Tabletop module for the D35E system. It makes spell save DCs visible where players and GMs already look during play: the spell chat card and the Spells tab on the character sheet.
 
-The module does not create extra chat messages, open extra windows, or replace D35E's spell math. It displays the DC D35E already calculated from the spell, spellbook, ability modifier, and configured DC bonuses.
+No extra chat messages. No pop-up windows. No replacement spell workflow. The module reads the D35E system's existing spell data and displays the save DC more clearly.
 
-## Features
+![Spell chat card showing Spell Save DC](docs/screenshots/chat-card-save-dc.svg)
 
-- Adds a clear `Spell Save DC: N` row to existing D35E spell chat cards when a spell calls for a saving throw.
-- Leaves native D35E tags, saving throw buttons, spell resistance buttons, damage buttons, and chat behavior intact.
-- Adds a Spell Save DC reference box to each spellbook section on character sheets.
-- Supports multiple spellbooks by reading each spellbook's own D35E `baseDCFormula` and spellcasting ability.
+## What It Does
 
-## Rules Basis
+- Adds a clear `Spell Save DC: N` row to existing D35E spell chat cards when the spell calls for a saving throw.
+- Preserves D35E's native save type, spell resistance, damage, action buttons, and chat-card layout.
+- Adds a `Spell Save DC` reference box to each spellbook section on the character sheet's Spells tab.
+- Shows the live spellcasting ability modifier in the sheet summary, such as `10 + 6 (INT mod) + spell level`.
+- Supports multiple spellbooks by reading each spellbook's configured ability and `baseDCFormula`.
+- Does not modify actor, item, spell, or world data.
 
-This module follows the D&D 3.5e / D35E spell save DC shape:
+![Character sheet spellbook summary showing Spell Save DC](docs/screenshots/sheet-summary-save-dc.svg)
 
-```text
-10 + spell level + spellcasting ability modifier + configured D35E DC bonuses or overrides
-```
+## Compatibility
 
-Caster level is not used as the spell save DC base.
+- Foundry VTT: minimum 14, verified 14.362
+- System: D35E 3.0.2
+
+The module is intentionally D35E-specific and will only run in D35E worlds.
 
 ## Installation
 
-Install the module like any other Foundry VTT module, then enable **D35E Spell Save DC** in a D35E world.
+In Foundry's **Add-on Modules** setup screen, choose **Install Module** and paste this manifest URL:
 
-For local development, copy this folder into Foundry's `Data/modules` directory and restart or reload Foundry.
-
-## Validation
-
-```powershell
-npm test
+```text
+https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/latest/download/module.json
 ```
 
-Manual checks should include:
+Then open your D35E world, enable **D35E Spell Save DC** in **Manage Modules**, and reload the world when Foundry prompts you.
 
-- Cast a spell with a Fortitude, Reflex, or Will saving throw and confirm the existing chat card shows `Spell Save DC: N`.
-- Cast a spell with no saving throw and confirm no save DC row appears.
-- Open a character sheet's Spells tab and confirm each spellbook summary shows a Spell Save DC reference.
+## Updating
+
+Foundry checks the stable manifest URL above for updates. Each release manifest points its `download` field to the matching versioned zip asset, for example:
+
+```text
+https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v0.1.0/d35e-spell-save-dc-v0.1.0.zip
+```
+
+That means Foundry can always find the latest manifest while each installed version still downloads a fixed release archive.
+
+## How The DC Is Displayed
+
+For spell chat cards, D35E already renders the calculated spell save DC. This module promotes that existing value into a more visible row:
+
+```text
+Spell Save DC: 18
+```
+
+For character sheets, the Spells tab shows a reference formula for each spellbook. For a wizard with INT modifier `6`, the standard D35E formula is displayed as:
+
+```text
+10 + 6 (INT mod) + spell level
+```
+
+Custom D35E formulas are left in their configured order and made readable by replacing known tokens such as `@sl`, `@ablMod`, and `@cl`.
+
+## Troubleshooting
+
+If a spell does not show a save DC row, check that the spell has a saving throw configured in D35E. Spells with no saving throw, or a save description of `None`, are intentionally skipped.
+
+If a character sheet summary looks wrong, check the spellbook's configured spellcasting ability and `baseDCFormula` in D35E. The module displays those settings; it does not rewrite them.
+
+For deeper troubleshooting, enable the module's **Debug logging** setting. Skipped chat cards and unresolved actor/item data will be logged to the browser console.
+
+## Links
+
+- [Latest release](https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/latest)
+- [Issues and bug reports](https://github.com/SpencerZPoole/d35e-spell-save-dc/issues)
+- [Changelog](CHANGELOG.md)
+- [Security policy](SECURITY.md)
 
 ## Donate
 

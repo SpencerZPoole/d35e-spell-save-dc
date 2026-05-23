@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">D35E spell chat card with Spell Save DC row</title>
+  <desc id="desc">A Foundry-style D35E spell chat card showing the inserted Spell Save DC row above native spell details.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#34251d"/>
+      <stop offset="1" stop-color="#171412"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <rect x="160" y="54" width="580" height="452" rx="6" fill="#e9dfc9" filter="url(#shadow)"/>
+  <rect x="160" y="54" width="580" height="70" rx="6" fill="#3b2f25"/>
+  <text x="192" y="98" fill="#f7ead2" font-family="Georgia, serif" font-size="30" font-weight="700">Lightning Bolt</text>
+  <text x="192" y="148" fill="#4b382d" font-family="Arial, sans-serif" font-size="18" font-weight="700">A wizard casts a spell</text>
+  <rect x="190" y="174" width="520" height="54" rx="4" fill="#d6c8ae" stroke="#8d765e"/>
+  <text x="210" y="208" fill="#2d211a" font-family="Arial, sans-serif" font-size="21" font-weight="700">Spell Save DC</text>
+  <text x="668" y="210" fill="#111" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="end">18</text>
+  <rect x="190" y="248" width="154" height="38" rx="3" fill="#f5eedf" stroke="#b89d7b"/>
+  <text x="267" y="273" fill="#3b2f25" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Reflex half</text>
+  <rect x="358" y="248" width="106" height="38" rx="3" fill="#f5eedf" stroke="#b89d7b"/>
+  <text x="411" y="273" fill="#3b2f25" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">SR: Yes</text>
+  <rect x="478" y="248" width="106" height="38" rx="3" fill="#f5eedf" stroke="#b89d7b"/>
+  <text x="531" y="273" fill="#3b2f25" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">DC 18</text>
+  <line x1="190" y1="314" x2="710" y2="314" stroke="#b89d7b"/>
+  <text x="190" y="354" fill="#2d211a" font-family="Arial, sans-serif" font-size="18">A stroke of electrical energy deals damage in a line.</text>
+  <rect x="190" y="396" width="156" height="42" rx="3" fill="#4d3b2d"/>
+  <text x="268" y="423" fill="#fff4df" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Roll Damage</text>
+  <rect x="362" y="396" width="156" height="42" rx="3" fill="#4d3b2d"/>
+  <text x="440" y="423" fill="#fff4df" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Roll Save</text>
+  <text x="450" y="490" fill="#bfa98d" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Illustrative screenshot of the module's chat-card enhancement</text>
+</svg>
