@@ -4,6 +4,10 @@
 
 No extra chat messages. No pop-up windows. No replacement spell workflow. The module reads the D35E system's existing spell data and displays the save DC more clearly.
 
+**Support:** If this module helps your D35E table, donations are optional and support continued maintenance, compatibility testing, release packaging, and documentation.
+
+[![Sponsor on GitHub](https://img.shields.io/badge/GitHub%20Sponsors-Donate-ea4aaa?style=flat&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/SpencerZPoole) [![Donate with PayPal](https://img.shields.io/badge/PayPal-One--time%20donation-00457C?style=flat&logo=paypal&logoColor=white)](https://paypal.me/mrpooley92)
+
 ![D35E spellbook summary row with Spell Save DC](docs/screenshots/sheet-summary-save-dc.png)
 
 ## What It Does
@@ -74,10 +78,3 @@ For deeper troubleshooting, enable the module's **Debug logging** setting. Skipp
 - [Issues and bug reports](https://github.com/SpencerZPoole/d35e-spell-save-dc/issues)
 - [Changelog](CHANGELOG.md)
 - [Security policy](SECURITY.md)
-
-## Donate
-
-If this project helped your table, donations are welcome. GitHub Sponsors is best for recurring sponsorships; PayPal works well for one-time donations.
-
-[![Sponsor on GitHub](https://img.shields.io/badge/GitHub%20Sponsors-Donate-ea4aaa?style=flat&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/SpencerZPoole)
-[![Donate with PayPal](https://img.shields.io/badge/PayPal-One--time%20donation-00457C?style=flat&logo=paypal&logoColor=white)](https://paypal.me/mrpooley92)
