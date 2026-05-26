@@ -15,8 +15,9 @@ const expectedReleaseBase = `https://github.com/SpencerZPoole/d35e-spell-save-dc
 
 if (manifest.id !== "d35e-spell-save-dc") fail("module.json id must be d35e-spell-save-dc");
 if (manifest.title !== "D35E Spell Save DC") fail("module.json title mismatch");
-if (!manifest.relationships?.systems?.some((system) => system.id === "D35E")) fail("module.json must declare D35E relationship");
-if (!manifest.system?.includes?.("D35E")) fail("module.json must restrict activation to D35E worlds");
+if (!manifest.relationships?.systems?.some((system) => system.id === "D35E" && system.type === "system")) {
+  fail("module.json must restrict activation through a D35E system relationship");
+}
 if (manifest.manifest !== "https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/latest/download/module.json") {
   fail("module.json manifest must point to the stable latest-release manifest asset");
 }
