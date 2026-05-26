@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+- Removed the legacy top-level `system` manifest key so Foundry v14 no longer warns about unknown manifest metadata.
+- Kept D35E world restriction through the modern `relationships.systems` manifest entry.
+- Updated release metadata and package assets for the `v1.1.1` public release.
+
 ## 0.1.1
 
 - Updated public release metadata for Foundry package listing submission.

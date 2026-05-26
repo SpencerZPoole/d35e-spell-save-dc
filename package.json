@@ -1,6 +1,6 @@
 {
   "name": "d35e-spell-save-dc",
-  "version": "0.1.1",
+  "version": "1.1.1",
   "description": "Prominent D35E spell save DC display for Foundry VTT chat cards and spellbook summaries.",
   "type": "module",
   "license": "MIT",

@@ -43,7 +43,7 @@ Then open your D35E world, enable **D35E Spell Save DC** in **Manage Modules**, 
 Foundry checks the stable manifest URL above for updates. Each release manifest points its `download` field to the matching versioned zip asset, for example:
 
 ```text
-https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v0.1.1/d35e-spell-save-dc-v0.1.1.zip
+https://github.com/SpencerZPoole/d35e-spell-save-dc/releases/download/v1.1.1/d35e-spell-save-dc-v1.1.1.zip
 ```
 
 That means Foundry can always find the latest manifest while each installed version still downloads a fixed release archive.
